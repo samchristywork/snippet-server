@@ -23,6 +23,10 @@ func main() {
 		json.Unmarshal(body, &data)
 	})
 
+	http.HandleFunc("/load-snippet", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, data.Data)
+	})
+
 	fmt.Println("Server is running on port 8080")
 	http.ListenAndServe(":8080", nil)
 }
