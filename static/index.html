@@ -18,12 +18,13 @@ textarea {
   display: block;
   font-family: monospace;
   font-size: 14px;
-  height: 80vh;
+  height: calc(100vh - 6rem);
   resize: none;
   margin: 1rem;
   margin-bottom: 0;
   width: calc(100% - 2rem);
   padding: 0rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -35,6 +36,7 @@ button {
   background-color: #007bff;
   color: white;
   border: none;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
   border-radius: 0.25rem;
   cursor: pointer;
 }
@@ -56,7 +58,7 @@ button:hover {
   <textarea id="data" placeholder="Enter your snippet here..." spellcheck="false"></textarea>
   <div class="controls">
     <button onclick="saveSnippet()">Save</button>
-    <button onclick="loadSnippet()">Load</button>
+    <button onclick="loadSnippet()">Reload</button>
     <button onclick="clearSnippet()">Clear</button>
   <div>
 </body>
