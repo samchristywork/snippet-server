@@ -60,6 +60,7 @@ button:hover {
     <button onclick="saveSnippet()">Save</button>
     <button onclick="loadSnippet()">Reload</button>
     <button onclick="clearSnippet()">Clear</button>
+    <button onclick="copyToClipboard()">Copy</button>
   <div>
 </body>
 
@@ -92,6 +93,10 @@ function clearSnippet() {
   }).then(() => {
     loadSnippet();
   });
+}
+
+function copyToClipboard() {
+  navigator.clipboard.writeText(document.getElementById("data").value);
 }
 
 loadSnippet();
