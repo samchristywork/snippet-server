@@ -16,4 +16,26 @@
   <button onclick="loadSnippet()">Load</button>
   <button onclick="clearSnippet()">Clear</button>
 </body>
+
+<script>
+function saveSnippet() {
+  fetch("/save-snippet", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data: document.getElementById("data").value }),
+  });
+}
+
+function clearSnippet() {
+  fetch("/save-snippet", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data: ""}),
+  });
+}
+</script>
 </html>
